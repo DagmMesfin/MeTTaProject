@@ -29,8 +29,8 @@ The MeTTaProject is a tool designed for summarizing gene data. It leverages Goog
    ```
 2. Set up a virtual environment:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   python3 -m venv metta
+   source metta/bin/activate
    ```
 3. Install dependencies:
    ```bash
@@ -42,14 +42,11 @@ The MeTTaProject is a tool designed for summarizing gene data. It leverages Goog
    ```
 
 ## Usage
-1. Run the main script to process gene data and generate summaries:
+1. Run the main metta script to process gene data and generate summaries:
    ```bash
-   python main.py
+   metta main.metta
    ```
 2. Check the `summaries.csv` and `summaries.metta` files for the results.
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.

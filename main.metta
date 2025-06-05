@@ -1,4 +1,4 @@
-!(register-module! ../MeTTaProject)
+!(register-module! ../MeTTaProject) ;initialize the imports
 !(import! &self main)
 !(import! &self MeTTaProject:gene)
 
@@ -10,7 +10,6 @@
        (match &self (gene_name (gene $gen) $name) 
        (match &self (synonyms (gene $gen) $synonyms) 
        ((summarize $gen (gene $gen $type $chr $start $end $name $synonyms))))))))
-))
+)) ; matching function defined recursively for multiple variable matched
 
-!(h)
-
+!(h) ; function called
