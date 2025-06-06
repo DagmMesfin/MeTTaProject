@@ -52,7 +52,7 @@ def utils(metta):
     geneSummarizer = OperationAtom(
         'summarize',
         lambda id, text : gene_summarizer(id, text),
-        ["Atom", "Expression", "Expression"],
+        ["Expression", "Expression", "Atom"],
         unwrap=False
     )
     return {r'summarize' : geneSummarizer}
