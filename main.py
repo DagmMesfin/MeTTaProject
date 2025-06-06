@@ -18,7 +18,7 @@ METTA_PATH = "summaries.metta"
 with open(CSV_PATH, mode='w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["id", "summary"])
-with open(METTA_PATH, "w") as f:
+with open(METTA_PATH, mode="w") as f:
         f.write("")
 
 #The function definition for Gene Summarizer     
@@ -40,7 +40,7 @@ def gene_summarizer(id, text):
     
     # Save the summaries to .metta
     metta_expr = f'(summary (gene {id}) "{summarized_text}")'
-    with open("summaries.metta", "a") as f:
+    with open(METTA_PATH, mode="a") as f:
         f.write(metta_expr + "\n")
 
     return [S(summarized_text)]
@@ -49,10 +49,10 @@ def gene_summarizer(id, text):
 @register_atoms(pass_metta=True)
 
 def utils(metta):
-    summaryGene = OperationAtom(
+    geneSummarizer = OperationAtom(
         'summarize',
         lambda id, text : gene_summarizer(id, text),
         ["Atom", "Expression", "Expression"],
         unwrap=False
     )
-    return {r'summarize' : summaryGene}
+    return {r'summarize' : geneSummarizer}
